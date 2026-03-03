@@ -89,7 +89,7 @@ export function HeroSection({ isPlaying = false, musicPlayer }: { isPlaying?: bo
           isVisible ? "opacity-60" : "opacity-0"
         }`}
       >
-        <span className="text-muted-foreground text-[10px] tracking-[0.2em] uppercase font-sans">Desliza</span>
+        <span className="text-muted-foreground text-sm tracking-[0.2em] uppercase font-sans">Desliza</span>
         <div className="w-5 h-8 rounded-full border border-baby-gold/40 flex items-start justify-center p-1.5">
           <div className="w-1 h-2 rounded-full bg-baby-gold/60 animate-bounce" />
         </div>
