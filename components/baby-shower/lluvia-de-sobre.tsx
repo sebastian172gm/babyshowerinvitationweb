@@ -23,6 +23,10 @@ export function LluviaDeSobre({ giftRegistryUrl }: LluviaDeSobreProps) {
           Lluvia de Sobre
         </h2>
 
+        <p className="text-muted-foreground text-xs font-sans mb-6">
+          Pañales etapa 3 o 4
+        </p>
+
         <div className="h-px bg-gradient-to-r from-transparent via-baby-gold/50 to-transparent mb-6" />
 
         <a

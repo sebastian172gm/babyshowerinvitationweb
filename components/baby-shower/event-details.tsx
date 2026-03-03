@@ -113,6 +113,9 @@ export function EventDetails({
             >
               Lluvia de Sobres
             </h3>
+            <p className="text-muted-foreground text-xs font-sans mb-3">
+              + Pañales etapa 3 o 4
+            </p>
             <div className="flex items-center gap-2 mb-3">
               <div className="flex-1 h-px bg-baby-gold/40" />
               <span className="text-baby-gold/70 text-xl font-bold leading-none">ó</span>
