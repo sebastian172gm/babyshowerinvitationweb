@@ -129,7 +129,7 @@ export function WhatsAppRsvp({ phoneNumber, babyName, eventDate }: WhatsAppRsvpP
           {/* Category filter */}
           <div className="text-left">
             <label className="block text-xs text-muted-foreground tracking-wider uppercase mb-3 font-sans">
-              Tipo de invitado
+              Tipos de invitado
             </label>
             <div className="flex flex-wrap gap-2">
               <button
