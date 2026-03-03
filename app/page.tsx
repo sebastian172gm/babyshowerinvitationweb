@@ -25,7 +25,7 @@ const EVENT_DAY = "Sabado"
 const EVENT_DATE_TEXT = "18 de Abril, 2026"
 const EVENT_TIME = "2:00 PM"
 const EVENT_ADDRESS = "Salon de eventos las mercedez, Cra 107c #67a-29, Bogotá"
-const MAP_URL = "https://maps.google.com"
+const MAP_URL = "https://www.google.com/maps/place/Cra.+107c+%23+67A-29,+Engativ%C3%A1,+Bogot%C3%A1,+D.C.,+Bogot%C3%A1,+Bogot%C3%A1,+D.C.,+Colombia/@4.702345,-74.1274675,21z/data=!4m6!3m5!1s0x8e3f9ca979760fc7:0xe444f5283c29267f!8m2!3d4.702374!4d-74.127233!16s%2Fg%2F11l_616vwy?entry=ttu&g_ep=EgoyMDI2MDIyNS4wIKXMDSoASAFQAw%3D%3D"
 const GIFT_REGISTRY_URL = "#"
 const WHATSAPP_PHONE = "573503009808"
 /* =================================== */

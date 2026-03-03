@@ -2,6 +2,7 @@
 
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { Calendar, Clock, MapPin, Gift } from "lucide-react"
+import LocationMap from "@/components/map/location-map"
 
 interface EventDetailsProps {
   day: string
@@ -78,8 +79,13 @@ export function EventDetails({
           </div>
         </div>
 
+        {/* Map */}
+        <div className="mt-10 h-64 md:h-80 w-full">
+          <LocationMap />
+        </div>
+
         {/* Buttons */}
-        <div className="flex flex-col items-center gap-4 mt-10">
+        <div className="flex flex-col items-center gap-4 mt-6">
           <a
             href={mapUrl}
             target="_blank"
