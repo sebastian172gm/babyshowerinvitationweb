@@ -7,7 +7,7 @@ const photos = [
   { src: "/images/baby-shoes.jpg", alt: "Zapatitos de bebe", rotation: "-rotate-3" },
   { src: "/images/baby-nursery.jpg", alt: "Cuarto del bebe", rotation: "rotate-2" },
   { src: "/images/baby-clothes11.jpg", alt: "Ropita de bebe", rotation: "-rotate-1" },
-  { src: "/images/baby-toys.jpg", alt: "Juguetes del bebe", rotation: "rotate-3" },
+  { src: "/images/baby-toys1.jpg", alt: "Juguetes del bebe", rotation: "rotate-3" },
 ]
 
 export function PhotoGallery() {
