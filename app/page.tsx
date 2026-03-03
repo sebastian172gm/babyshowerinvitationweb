@@ -21,12 +21,12 @@ import { WhatsAppRsvp } from "@/components/baby-shower/whatsapp-rsvp"
 const BABY_NAME = "Lyah Celeste"
 const BABY_LAST_NAME = ""
 const EVENT_DATE = new Date("2026-04-18T14:00:00")
-const EVENT_DAY = "Sabado"
+const EVENT_DAY = "Sábado"
 const EVENT_DATE_TEXT = "18 de Abril, 2026"
 const EVENT_TIME = "2:00 PM"
-const EVENT_ADDRESS = "Salon de eventos las mercedez, Cra 107d #67a-2, Bogotá"
+const EVENT_ADDRESS = "Salón de eventos las mercedez, Cra 107d #67a-2, Bogotá"
 const MAP_URL = "https://www.google.com/maps/place/Cra.+107d+%23+67A-2,+Engativ%C3%A1,+Bogot%C3%A1,+D.C.,+Bogot%C3%A1,+Bogot%C3%A1,+D.C.,+Colombia/@4.7024203,-74.1281027,19z/data=!3m1!4b1!4m6!3m5!1s0x8e3f9ca97ba5e3d1:0xe94d98320b59429d!8m2!3d4.702419!4d-74.127459!16s%2Fg%2F11x2m4cfbw?entry=ttu&g_ep=EgoyMDI2MDIyNS4wIKXMDSoASAFQAw%3D%3D"
-const GIFT_REGISTRY_URL = "#"
+const GIFT_REGISTRY_URL = "https://www.wishbob.com/dytpnuclgq"
 const WHATSAPP_PHONE = "573503009808"
 /* =================================== */
 

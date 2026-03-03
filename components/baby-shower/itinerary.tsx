@@ -11,12 +11,12 @@ interface ItineraryItem {
 }
 
 const itineraryItems: ItineraryItem[] = [
-  { time: "2:00 PM", title: "Bienvenida y recepcion", icon: Coffee },
+  { time: "2:00 PM", title: "Bienvenida y recepción", icon: Coffee },
   { time: "2:30 PM", title: "Fotos", icon: Camera },
   { time: "3:00 PM", title: "Comida y bebidas", icon: Utensils },
-  { time: "3:30 PM", title: "Juegos y dinamicas", icon: Gamepad2 },
+  { time: "3:30 PM", title: "Juegos y dinámicas", icon: Gamepad2 },
   { time: "5:30 PM", title: "Apertura de regalos", icon: PartyPopper },
-  { time: "6:30 PM", title: "recuerdos", icon: PartyPopper }
+  { time: "6:30 PM", title: "Recuerdos", icon: PartyPopper }
 ]
 
 function TimelineItem({ item, index }: { item: ItineraryItem; index: number }) {
@@ -62,7 +62,7 @@ export function Itinerary() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="text-baby-gold text-xs tracking-[0.4em] uppercase mb-2 font-sans">Programa</p>
+          <p className="text-baby-gold text-xs tracking-[0.4em] uppercase mb-2 font-sans">Programa/</p>
           <h2
             className="text-3xl md:text-4xl text-foreground"
             style={{ fontFamily: "var(--font-script), 'Great Vibes', cursive" }}

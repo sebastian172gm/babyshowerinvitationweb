@@ -93,7 +93,7 @@ export function EventDetails({
             className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-baby-gold-light/30 text-foreground text-sm tracking-wider font-sans hover:bg-baby-gold-light/50 transition-all duration-300 hover:scale-105 border border-baby-gold/30"
           >
             <MapPin className="w-4 h-4" strokeWidth={1.5} />
-            <span>Ver ubicacion</span>
+            <span>Ver ubicación</span>
           </a>
 
           {/* Elegant divider */}
