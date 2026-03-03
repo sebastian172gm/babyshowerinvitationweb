@@ -96,7 +96,16 @@ export function EventDetails({
             <span>Ver ubicacion</span>
           </a>
 
-          {/* Lluvia de Sobres divider */}
+          {/* Elegant divider */}
+          <div className="w-full flex flex-col items-center gap-1 my-8">
+            <div className="flex items-center gap-3 w-3/4">
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-baby-gold/50 to-baby-gold/50" />
+              <span className="text-baby-gold/60 text-lg">&#10045;</span>
+              <div className="flex-1 h-px bg-gradient-to-l from-transparent via-baby-gold/50 to-baby-gold/50" />
+            </div>
+          </div>
+
+          {/* Lluvia de Sobres */}
           <div className="w-full py-2">
             <h3
               className="text-2xl md:text-3xl text-foreground mb-3"
