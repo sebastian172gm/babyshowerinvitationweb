@@ -7,8 +7,8 @@ import { ZoomIn, ZoomOut, Navigation, ExternalLink } from "lucide-react"
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN ?? ""
 
-const TARGET_LNG = -74.12763
-const TARGET_LAT = 4.70229
+const TARGET_LNG = -74.12749
+const TARGET_LAT = 4.70250
 const INITIAL_ZOOM = 14
 const CLICK_ZOOM_INCREMENT = 2
 const NEIGHBORHOOD_ZOOM_THRESHOLD = 17

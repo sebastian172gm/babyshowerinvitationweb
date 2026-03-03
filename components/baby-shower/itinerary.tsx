@@ -12,10 +12,11 @@ interface ItineraryItem {
 
 const itineraryItems: ItineraryItem[] = [
   { time: "2:00 PM", title: "Bienvenida y recepcion", icon: Coffee },
-  { time: "2:30 PM", title: "Comida y bebidas", icon: Utensils },
+  { time: "2:30 PM", title: "Fotos", icon: Camera },
+  { time: "3:00 PM", title: "Comida y bebidas", icon: Utensils },
   { time: "3:30 PM", title: "Juegos y dinamicas", icon: Gamepad2 },
-  { time: "4:30 PM", title: "Apertura de regalos", icon: PartyPopper },
-  { time: "5:30 PM", title: "Fotos y recuerdos", icon: Camera },
+  { time: "5:30 PM", title: "Apertura de regalos", icon: PartyPopper },
+  { time: "6:30 PM", title: "recuerdos", icon: PartyPopper }
 ]
 
 function TimelineItem({ item, index }: { item: ItineraryItem; index: number }) {

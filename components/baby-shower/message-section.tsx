@@ -27,15 +27,15 @@ export function MessageSection() {
             onClick={() => setShowMessage(true)}
             className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-baby-pink/20 text-foreground text-sm tracking-wider uppercase font-sans hover:bg-baby-pink/30 transition-all duration-300 hover:scale-105 border border-baby-pink/30"
           >
-            <span>Dale clic</span>
+            <span>Dale click</span>
             <Heart className="w-4 h-4 text-baby-pink" strokeWidth={1.5} />
           </button>
         ) : (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
             <p className="text-foreground/70 leading-relaxed font-sans text-sm md:text-base">
-              ¡Un nuevo milagro esta por llegar a nuestras vidas!
+              ¡Un nuevo milagro está por llegar a nuestras vidas!
               Te invitamos a celebrar con nosotros la llegada de nuestra princesa.
-              Tu presencia llenara de alegria este dia tan especial.
+              Tu presencia llenará de alegría este día tan especial. 💕
             </p>
             <div className="flex items-center justify-center gap-2 mt-6">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">

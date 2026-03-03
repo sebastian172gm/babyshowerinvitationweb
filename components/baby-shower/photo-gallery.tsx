@@ -4,10 +4,10 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import Image from "next/image"
 
 const photos = [
-  { src: "/images/baby-shoes.jpg", alt: "Zapatitos de bebe", rotation: "-rotate-3" },
-  { src: "/images/baby-nursery.jpg", alt: "Cuarto del bebe", rotation: "rotate-2" },
-  { src: "/images/baby-clothes11.jpg", alt: "Ropita de bebe", rotation: "-rotate-1" },
-  { src: "/images/baby-toys1.jpg", alt: "Juguetes del bebe", rotation: "rotate-3" },
+  { src: "/images/baby-shoes.jpg", alt: "Zapatitos de la bebe", rotation: "-rotate-3" },
+  { src: "/images/baby-nursery.jpg", alt: "Cuarto de la bebe", rotation: "rotate-2" },
+  { src: "/images/baby-clothes11.jpg", alt: "Ropita de la bebe", rotation: "-rotate-1" },
+  { src: "/images/baby-toys1.jpg", alt: "Juguetes de la bebe", rotation: "rotate-3" },
 ]
 
 export function PhotoGallery() {

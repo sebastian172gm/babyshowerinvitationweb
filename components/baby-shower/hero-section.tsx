@@ -3,11 +3,13 @@
 import { BearWithBalloons } from "./bear-with-balloons"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
-export function HeroSection() {
+import type { ReactNode } from "react"
+
+export function HeroSection({ isPlaying = false, musicPlayer }: { isPlaying?: boolean; musicPlayer?: ReactNode }) {
   const { ref, isVisible } = useScrollAnimation(0.1)
 
   return (
-    <section ref={ref} className="relative min-h-screen flex flex-col items-center justify-center px-4 py-16 overflow-hidden">
+    <section ref={ref} className="relative min-h-screen flex flex-col items-center justify-start px-4 pt-24 pb-16 overflow-hidden">
       {/* Decorative stars */}
       <div className="absolute top-[10%] left-[8%] opacity-30 animate-pulse" style={{ animationDuration: "3s" }}>
         <svg width="20" height="20" viewBox="0 0 16 16" fill="none">
@@ -75,8 +77,11 @@ export function HeroSection() {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
         }`}
       >
-        <BearWithBalloons className="w-full h-full" />
+        <BearWithBalloons className="w-full h-full" isPlaying={isPlaying} />
       </div>
+
+      {/* Music player */}
+      {musicPlayer}
 
       {/* Scroll indicator */}
       <div
