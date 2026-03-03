@@ -50,7 +50,7 @@ export function HeroSection() {
               opacity="0.85"
             >
               <textPath href="#textArc" startOffset="50%">
-                ESTAS CORDIALMENTE INVITADA
+                ESTAN CORDIALMENTE INVITADOS
               </textPath>
             </text>
           </svg>

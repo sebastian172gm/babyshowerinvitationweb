@@ -20,12 +20,27 @@
     "category": "Amigos Ibeth"
   },
   {
+    "name": "Steven Perdomo & Señora",
+    "maxGuests": 2,
+    "category": "Amigos Ibeth"
+  },
+  {
+    "name": "Stivens Castañeda, Señora e hija",
+    "maxGuests": 3,
+    "category": "Amigos Ibeth"
+  },
+  {
     "name": "Eduardo Hernandez, Señora e Hijo",
     "maxGuests": 3,
     "category": "Amigos Sebas"
   },
   {
     "name": "Edgar Manuel Hernandez",
+    "maxGuests": 1,
+    "category": "Amigos Sebas"
+  },
+  {
+    "name": "Edward Camilo Romero",
     "maxGuests": 1,
     "category": "Amigos Sebas"
   },
@@ -45,7 +60,7 @@
     "category": "Amigos Sebas"
   },
   {
-    "name": "Ortensia",
+    "name": "Ortensia Gomez",
     "maxGuests": 1,
     "category": "Amigos Sebas"
   },
@@ -141,6 +156,11 @@
   },
   {
     "name": "Tatiana Gonzalez",
+    "maxGuests": 1,
+    "category": "Amigos Sebas"
+  },
+  {
+    "name": "Yeimy",
     "maxGuests": 1,
     "category": "Amigos Sebas"
   },
@@ -341,7 +361,7 @@
   },
   {
     "name": "Fernando Ortiz, Señora e Hijos",
-    "maxGuests": 4,
+    "maxGuests": 3,
     "category": "Familia M. Sebas"
   },
   {

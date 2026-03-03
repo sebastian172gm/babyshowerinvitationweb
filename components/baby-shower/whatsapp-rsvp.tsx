@@ -1,5 +1,5 @@
 "use client"
-
+"/*npm run generate-guests */"
 import { useState, useMemo, useRef, useEffect } from "react"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { Check, Send, ChevronDown } from "lucide-react"
