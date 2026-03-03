@@ -3,14 +3,21 @@
 import { useState, useRef, useEffect } from "react"
 import { Music, Pause } from "lucide-react"
 
-export function MusicPlayer() {
+export function MusicPlayer({ shouldPlay = false }: { shouldPlay?: boolean }) {
   const [isPlaying, setIsPlaying] = useState(false)
   const audioRef = useRef<HTMLAudioElement>(null)
+  const hasAutoPlayed = useRef(false)
 
   useEffect(() => {
-    // Create a simple lullaby-like tone using Web Audio API
-    // Since we don't have an audio file, we'll just show the player
-  }, [])
+    if (shouldPlay && !hasAutoPlayed.current && audioRef.current) {
+      hasAutoPlayed.current = true
+      audioRef.current.play().then(() => {
+        setIsPlaying(true)
+      }).catch(() => {
+        // Autoplay blocked by browser
+      })
+    }
+  }, [shouldPlay])
 
   const togglePlay = () => {
     if (audioRef.current) {

@@ -89,6 +89,25 @@ export function EventDetails({
             <MapPin className="w-4 h-4" strokeWidth={1.5} />
             <span>Ver ubicacion</span>
           </a>
+
+          {/* Lluvia de Sobres divider */}
+          <div className="w-full py-2">
+            <h3
+              className="text-2xl md:text-3xl text-foreground mb-3"
+              style={{ fontFamily: "var(--font-script), 'Great Vibes', cursive" }}
+            >
+              Lluvia de Sobres
+            </h3>
+            <div className="flex items-center gap-2 mb-3">
+              <div className="flex-1 h-px bg-baby-gold/40" />
+              <span className="text-baby-gold/70 text-xl font-bold leading-none">ó</span>
+              <div className="flex-1 h-px bg-baby-gold/40" />
+            </div>
+            <p className="text-baby-gold text-xs tracking-[0.4em] uppercase font-sans">
+              Escoge tu regalo
+            </p>
+          </div>
+
           <a
             href={giftRegistryUrl}
             target="_blank"

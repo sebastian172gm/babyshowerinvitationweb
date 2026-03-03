@@ -49,7 +49,7 @@ export default function BabyShowerPage() {
         <FloatingClouds />
 
         {/* Music player */}
-        <MusicPlayer />
+        <MusicPlayer shouldPlay={isEnvelopeOpen} />
 
         {/* Sections */}
         <HeroSection />

@@ -1,8 +1,10 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useMemo, useRef, useEffect } from "react"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
-import { Check, Send } from "lucide-react"
+import { Check, Send, ChevronDown } from "lucide-react"
+import guestList from "@/data/guests.json"
+import type { Guest } from "@/types/guest"
 
 interface WhatsAppRsvpProps {
   phoneNumber: string
@@ -12,26 +14,91 @@ interface WhatsAppRsvpProps {
 
 export function WhatsAppRsvp({ phoneNumber, babyName, eventDate }: WhatsAppRsvpProps) {
   const { ref, isVisible } = useScrollAnimation()
-  const [guestName, setGuestName] = useState("")
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
+  const [searchQuery, setSearchQuery] = useState("")
+  const [selectedGuest, setSelectedGuest] = useState<Guest | null>(null)
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const [attending, setAttending] = useState<"yes" | "no" | null>(null)
   const [guests, setGuests] = useState("1")
+  const inputRef = useRef<HTMLInputElement>(null)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+
+  const categories = useMemo(() => {
+    const cats = new Set((guestList as Guest[]).map((g) => g.category))
+    return Array.from(cats).filter(Boolean).sort()
+  }, [])
+
+  const filteredGuests = useMemo(() => {
+    let list = guestList as Guest[]
+    if (selectedCategory) {
+      list = list.filter((g) => g.category === selectedCategory)
+    }
+    const query = searchQuery.toLowerCase().trim()
+    if (query) {
+      list = list.filter((g) => g.name.toLowerCase().includes(query))
+    }
+    return list
+  }, [searchQuery, selectedCategory])
+
+  // Reset guest count when selected guest changes
+  useEffect(() => {
+    setGuests("1")
+  }, [selectedGuest])
+
+  // Close dropdown on click outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node) &&
+        inputRef.current &&
+        !inputRef.current.contains(e.target as Node)
+      ) {
+        setIsDropdownOpen(false)
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [])
+
+  const handleCategoryChange = (cat: string | null) => {
+    setSelectedCategory(cat)
+    setSearchQuery("")
+    setSelectedGuest(null)
+  }
+
+  const handleSelectGuest = (guest: Guest) => {
+    setSelectedGuest(guest)
+    setSearchQuery(guest.name)
+    setIsDropdownOpen(false)
+  }
+
+  const handleInputChange = (value: string) => {
+    setSearchQuery(value)
+    setSelectedGuest(null)
+    setIsDropdownOpen(true)
+  }
+
+  const maxGuests = selectedGuest?.maxGuests ?? 1
 
   const buildMessage = () => {
+    const name = selectedGuest?.name || searchQuery || "Invitado"
     const status = attending === "yes" ? "Si asistire" : "No podre asistir"
     const lines = [
       `Hola! Confirmo mi asistencia al Baby Shower de ${babyName}.`,
       "",
-      `Nombre: ${guestName || "Invitado"}`,
+      `Nombre: ${name}`,
       `Asistencia: ${status}`,
     ]
     if (attending === "yes") {
-      lines.push(`Numero de acompanantes: ${guests}`)
+      lines.push(`Numero de personas: ${guests}`)
     }
     lines.push("", `Fecha del evento: ${eventDate}`)
     return encodeURIComponent(lines.join("\n"))
   }
 
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${buildMessage()}`
+  const canSend = (selectedGuest || searchQuery.trim()) && attending !== null
 
   return (
     <section ref={ref} className="py-20 px-4">
@@ -59,18 +126,103 @@ export function WhatsAppRsvp({ phoneNumber, babyName, eventDate }: WhatsAppRsvpP
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
-          {/* Name input */}
+          {/* Category filter */}
           <div className="text-left">
-            <label className="block text-xs text-muted-foreground tracking-wider uppercase mb-2 font-sans">
-              Tu nombre
+            <label className="block text-xs text-muted-foreground tracking-wider uppercase mb-3 font-sans">
+              Tipo de invitado
             </label>
-            <input
-              type="text"
-              value={guestName}
-              onChange={(e) => setGuestName(e.target.value)}
-              placeholder="Escribe tu nombre"
-              className="w-full px-5 py-3 rounded-full bg-card border border-border text-foreground text-sm font-sans placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-baby-pink/40 focus:border-baby-pink/40 transition-all"
-            />
+            <div className="flex flex-wrap gap-2">
+              <button
+                type="button"
+                onClick={() => handleCategoryChange(null)}
+                className={`px-4 py-2 rounded-full text-xs font-sans transition-all duration-300 border ${
+                  selectedCategory === null
+                    ? "bg-baby-pink/25 border-baby-pink/50 text-foreground"
+                    : "bg-card border-border text-muted-foreground hover:border-baby-pink/30"
+                }`}
+              >
+                Todos
+              </button>
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  type="button"
+                  onClick={() => handleCategoryChange(cat)}
+                  className={`px-4 py-2 rounded-full text-xs font-sans transition-all duration-300 border ${
+                    selectedCategory === cat
+                      ? "bg-baby-pink/25 border-baby-pink/50 text-foreground"
+                      : "bg-card border-border text-muted-foreground hover:border-baby-pink/30"
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Name autocomplete */}
+          <div className="text-left relative">
+            <label className="block text-xs text-muted-foreground tracking-wider uppercase mb-2 font-sans">
+              Busca tu nombre
+            </label>
+            <div className="relative">
+              <input
+                ref={inputRef}
+                type="text"
+                value={searchQuery}
+                onChange={(e) => handleInputChange(e.target.value)}
+                onFocus={() => setIsDropdownOpen(true)}
+                placeholder="Escribe tu nombre para buscar..."
+                className="w-full px-5 py-3 pr-10 rounded-full bg-card border border-border text-foreground text-sm font-sans placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-baby-pink/40 focus:border-baby-pink/40 transition-all"
+              />
+              <ChevronDown
+                className={`absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground transition-transform duration-200 ${
+                  isDropdownOpen ? "rotate-180" : ""
+                }`}
+              />
+            </div>
+
+            {/* Dropdown */}
+            {isDropdownOpen && filteredGuests.length > 0 && (
+              <div
+                ref={dropdownRef}
+                className="absolute z-50 w-full mt-2 max-h-48 overflow-y-auto rounded-2xl bg-card border border-border shadow-lg"
+              >
+                {filteredGuests.map((guest, i) => (
+                  <button
+                    key={`${guest.name}-${i}`}
+                    type="button"
+                    onClick={() => handleSelectGuest(guest)}
+                    className={`w-full flex items-center justify-between px-5 py-3 text-left text-sm font-sans transition-colors hover:bg-baby-pink/10 ${
+                      selectedGuest?.name === guest.name
+                        ? "bg-baby-pink/15 text-foreground"
+                        : "text-foreground"
+                    } ${i === 0 ? "rounded-t-2xl" : ""} ${
+                      i === filteredGuests.length - 1 ? "rounded-b-2xl" : ""
+                    }`}
+                  >
+                    <span className="truncate mr-2">{guest.name}</span>
+                    <span className="shrink-0 text-[10px] px-2 py-0.5 rounded-full bg-baby-pink/20 border border-baby-pink/30 text-muted-foreground">
+                      {guest.category}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {/* No results */}
+            {isDropdownOpen && searchQuery.trim() && filteredGuests.length === 0 && (
+              <div className="absolute z-50 w-full mt-2 px-5 py-3 rounded-2xl bg-card border border-border shadow-lg text-sm text-muted-foreground font-sans">
+                No se encontro tu nombre. Puedes escribirlo manualmente.
+              </div>
+            )}
+
+            {/* Category badge */}
+            {selectedGuest && (
+              <span className="inline-block mt-3 px-3 py-1 rounded-full bg-baby-pink/20 border border-baby-pink/40 text-foreground/70 text-xs font-sans tracking-wider">
+                {selectedGuest.category}
+              </span>
+            )}
           </div>
 
           {/* Attending toggle */}
@@ -110,14 +262,14 @@ export function WhatsAppRsvp({ phoneNumber, babyName, eventDate }: WhatsAppRsvpP
           {attending === "yes" && (
             <div className="text-left animate-in fade-in slide-in-from-bottom-2 duration-500">
               <label className="block text-xs text-muted-foreground tracking-wider uppercase mb-2 font-sans">
-                Numero de acompanantes
+                Numero de personas
               </label>
               <select
                 value={guests}
                 onChange={(e) => setGuests(e.target.value)}
                 className="w-full px-5 py-3 rounded-full bg-card border border-border text-foreground text-sm font-sans focus:outline-none focus:ring-2 focus:ring-baby-pink/40 focus:border-baby-pink/40 transition-all appearance-none"
               >
-                {[1, 2, 3, 4, 5].map((n) => (
+                {Array.from({ length: maxGuests }, (_, i) => i + 1).map((n) => (
                   <option key={n} value={n}>
                     {n} {n === 1 ? "persona" : "personas"}
                   </option>
@@ -128,10 +280,15 @@ export function WhatsAppRsvp({ phoneNumber, babyName, eventDate }: WhatsAppRsvpP
 
           {/* WhatsApp send button */}
           <a
-            href={whatsappUrl}
+            href={canSend ? whatsappUrl : undefined}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-3 w-full px-8 py-4 rounded-full bg-[#b2dfb0] text-foreground text-sm tracking-wider font-sans hover:bg-[#9dd49b] transition-all duration-300 hover:scale-[1.02] shadow-lg shadow-[#b2dfb0]/30 mt-2"
+            className={`inline-flex items-center justify-center gap-3 w-full px-8 py-4 rounded-full text-sm tracking-wider font-sans transition-all duration-300 mt-2 ${
+              canSend
+                ? "bg-[#b2dfb0] text-foreground hover:bg-[#9dd49b] hover:scale-[1.02] shadow-lg shadow-[#b2dfb0]/30 cursor-pointer"
+                : "bg-[#b2dfb0]/40 text-foreground/40 pointer-events-none"
+            }`}
+            aria-disabled={!canSend}
           >
             {/* WhatsApp icon */}
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
