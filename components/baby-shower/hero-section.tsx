@@ -85,7 +85,7 @@ export function HeroSection({ isPlaying = false, musicPlayer }: { isPlaying?: bo
 
       {/* Scroll indicator */}
       <div
-        className={`absolute bottom-2 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 transition-all duration-1000 delay-1000 ${
+        className={`mt-4 flex flex-col items-center gap-2 transition-all duration-1000 delay-1000 ${
           isVisible ? "opacity-60" : "opacity-0"
         }`}
       >
