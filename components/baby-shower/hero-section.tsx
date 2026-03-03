@@ -71,7 +71,7 @@ export function HeroSection() {
       </div>
 
       <div
-        className={`w-48 h-64 md:w-56 md:h-72 transition-all duration-1000 delay-500 ${
+        className={`w-72 h-80 md:w-96 md:h-[26rem] transition-all duration-1000 delay-500 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
         }`}
       >
