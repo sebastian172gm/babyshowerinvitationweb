@@ -121,8 +121,11 @@ export function EventDetails({
               <span className="text-baby-gold/70 text-xl font-bold leading-none">ó</span>
               <div className="flex-1 h-px bg-baby-gold/40" />
             </div>
-            <p className="text-baby-gold text-xs tracking-[0.4em] uppercase font-sans">
-              Escoge tu regalo
+            <p
+              className="text-4xl md:text-5xl text-foreground"
+              style={{ fontFamily: "var(--font-script), 'Great Vibes', cursive" }}
+            >
+              Escoge tu regalo aquí
             </p>
           </div>
 

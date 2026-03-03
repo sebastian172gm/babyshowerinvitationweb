@@ -33,9 +33,10 @@ export function LluviaDeSobre({ giftRegistryUrl }: LluviaDeSobreProps) {
           href={giftRegistryUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-baby-gold text-xs tracking-[0.4em] uppercase font-sans hover:opacity-70 transition-opacity"
+          className="text-4xl md:text-5xl text-foreground hover:opacity-70 transition-opacity"
+          style={{ fontFamily: "var(--font-script), 'Great Vibes', cursive" }}
         >
-          Escoge tu regalo
+          Escoge tu regalo aquí
         </a>
       </div>
     </section>
