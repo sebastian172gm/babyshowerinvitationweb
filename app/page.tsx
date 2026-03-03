@@ -18,8 +18,8 @@ import { WhatsAppRsvp } from "@/components/baby-shower/whatsapp-rsvp"
 /* ===================================
    VARIABLES EDITABLES - Personaliza aqui
    =================================== */
-const BABY_NAME = "Lyah"
-const BABY_LAST_NAME = "Celeste"
+const BABY_NAME = "Lyah Celeste"
+const BABY_LAST_NAME = ""
 const EVENT_DATE = new Date("2026-04-18T14:00:00")
 const EVENT_DAY = "Sabado"
 const EVENT_DATE_TEXT = "18 de Abril, 2026"

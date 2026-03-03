@@ -108,7 +108,7 @@ export function EventDetails({
           {/* Lluvia de Sobres */}
           <div className="w-full py-2">
             <h3
-              className="text-2xl md:text-3xl text-foreground mb-3"
+              className="text-4xl md:text-4xl text-foreground mb-3"
               style={{ fontFamily: "var(--font-script), 'Great Vibes', cursive" }}
             >
               Lluvia de Sobres
