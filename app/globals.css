@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #FDF6F0;
+  --background: #F9E8EA;
   --foreground: #3D2B1F;
   --card: #FFFAF7;
   --card-foreground: #3D2B1F;
@@ -45,7 +45,7 @@
   --baby-gold: #C9956B;
   --baby-gold-light: #E0C4A8;
   --baby-beige: #F5EBE4;
-  --baby-cream: #FDF6F0;
+  --baby-cream: #F9E8EA;
   --baby-rose: #B88A90;
   --baby-mauve: #C8A2A8;
 }

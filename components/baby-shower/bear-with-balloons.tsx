@@ -82,7 +82,7 @@ export function BearWithBalloons({ className = "" }: { className?: string }) {
 
         {/* Bear body */}
         <ellipse cx="150" cy="280" rx="45" ry="50" fill="#E8D5B8" />
-        
+
         {/* Bear belly */}
         <ellipse cx="150" cy="290" rx="30" ry="35" fill="#F5ECE0" />
 
