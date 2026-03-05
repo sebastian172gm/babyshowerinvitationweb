@@ -126,39 +126,7 @@ export function WhatsAppRsvp({ phoneNumber, babyName, eventDate }: WhatsAppRsvpP
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
-          {/* Category filter */}
-          <div className="text-left">
-            <label className="block text-xs text-muted-foreground tracking-wider uppercase mb-3 font-sans">
-              Tipos de invitado
-            </label>
-            <div className="flex flex-wrap gap-2">
-              <button
-                type="button"
-                onClick={() => handleCategoryChange(null)}
-                className={`px-4 py-2 rounded-full text-xs font-sans transition-all duration-300 border ${
-                  selectedCategory === null
-                    ? "bg-baby-pink/25 border-baby-pink/50 text-foreground"
-                    : "bg-card border-border text-muted-foreground hover:border-baby-pink/30"
-                }`}
-              >
-                Todos
-              </button>
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  type="button"
-                  onClick={() => handleCategoryChange(cat)}
-                  className={`px-4 py-2 rounded-full text-xs font-sans transition-all duration-300 border ${
-                    selectedCategory === cat
-                      ? "bg-baby-pink/25 border-baby-pink/50 text-foreground"
-                      : "bg-card border-border text-muted-foreground hover:border-baby-pink/30"
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-          </div>
+
 
           {/* Name autocomplete */}
           <div className="text-left relative">
@@ -172,7 +140,7 @@ export function WhatsAppRsvp({ phoneNumber, babyName, eventDate }: WhatsAppRsvpP
                 value={searchQuery}
                 onChange={(e) => handleInputChange(e.target.value)}
                 onFocus={() => setIsDropdownOpen(true)}
-                placeholder="Escribe tu nombre para buscar..."
+                placeholder="Escribe tu nombre para buscar... (Cabeza de familia)"
                 className="w-full px-5 py-3 pr-10 rounded-full bg-card border border-border text-foreground text-sm font-sans placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-baby-pink/40 focus:border-baby-pink/40 transition-all"
               />
               <ChevronDown

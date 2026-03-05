@@ -90,11 +90,11 @@ export function HeroSection({ isPlaying = false, musicPlayer }: { isPlaying?: bo
         }`}
       >
         <div className="flex items-center gap-3">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="animate-bounce">
-            <path d="M6 0L6 12M6 0L1 5M6 0L11 5" stroke="currentColor" strokeWidth="1.5" className="text-foreground" />
+          <svg width="16" height="16" viewBox="0 0 12 12" fill="none" className="animate-bounce">
+            <path d="M6 12L6 0M6 12L1 7M6 12L11 7" stroke="currentColor" strokeWidth="1.5" className="text-foreground" />
           </svg>
-          <span className="text-foreground text-sm tracking-[0.2em] uppercase font-sans">Desliza</span>
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="animate-bounce">
+          <span className="text-foreground text-lg tracking-[0.2em] uppercase font-sans">Desliza</span>
+          <svg width="16" height="16" viewBox="0 0 12 12" fill="none" className="animate-bounce">
             <path d="M6 12L6 0M6 12L1 7M6 12L11 7" stroke="currentColor" strokeWidth="1.5" className="text-foreground" />
           </svg>
         </div>

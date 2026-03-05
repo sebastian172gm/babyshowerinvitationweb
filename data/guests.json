@@ -1,12 +1,12 @@
 [
   {
     "name": "Dayana Narvaez",
-    "maxGuests": 1,
+    "maxGuests": 2,
     "category": "Amigos Ibeth"
   },
   {
     "name": "Andrea Camargo",
-    "maxGuests": 1,
+    "maxGuests": 2,
     "category": "Amigos Ibeth"
   },
   {
@@ -160,7 +160,7 @@
     "category": "Amigos Sebas"
   },
   {
-    "name": "Yeimy",
+    "name": "Yeimy Escobar",
     "maxGuests": 1,
     "category": "Amigos Sebas"
   },
@@ -465,7 +465,7 @@
     "category": "Familia M. Sebas"
   },
   {
-    "name": "Dayana Morcote, Esposo e Hijo",
+    "name": "Daniela Morcote, Esposo e Hijo",
     "maxGuests": 3,
     "category": "Familia M. Sebas"
   },
@@ -485,8 +485,8 @@
     "category": "Familia M. Sebas"
   },
   {
-    "name": "Wilson Zambrano, Señora e Hijo",
-    "maxGuests": 3,
+    "name": "Wilson Zambrano, Señora e Hijos",
+    "maxGuests": 4,
     "category": "Familia M. Sebas"
   },
   {
@@ -500,13 +500,8 @@
     "category": "Familia M. Sebas"
   },
   {
-    "name": "Angie Zambrano",
-    "maxGuests": 2,
-    "category": "Familia M. Sebas"
-  },
-  {
     "name": "Nelcy Morcote e Hija",
-    "maxGuests": 3,
+    "maxGuests": 4,
     "category": "Familia M. Sebas"
   },
   {
@@ -540,8 +535,8 @@
     "category": "Familia M. Sebas"
   },
   {
-    "name": "Pirazan",
-    "maxGuests": 2,
+    "name": "Felix Pirazan & Señora e hijos",
+    "maxGuests": 4,
     "category": "Familia M. Sebas"
   },
   {
@@ -552,11 +547,6 @@
   {
     "name": "Luz Avendaño, Mama e Hijo",
     "maxGuests": 3,
-    "category": "Familia M. Sebas"
-  },
-  {
-    "name": "Edilma",
-    "maxGuests": 2,
     "category": "Familia M. Sebas"
   },
   {
@@ -607,6 +597,11 @@
   {
     "name": "Imelda Muñoz e Hijo",
     "maxGuests": 2,
+    "category": "Familia M. Sebas"
+  },
+  {
+    "name": "Alex Tibata, Señora e hijos",
+    "maxGuests": 4,
     "category": "Familia M. Sebas"
   },
   {

@@ -19,7 +19,7 @@ export function LluviaSobres({ giftRegistryUrl }: LluviaSobresProps) {
       >
         <div className="w-full py-2">
           <h3
-            className="text-4xl md:text-4xl text-foreground mb-3"
+            className="text-4xl md:text-5xl text-foreground mb-3"
             style={{ fontFamily: "var(--font-script), 'Great Vibes', cursive" }}
           >
             Lluvia de Sobres
