@@ -95,9 +95,9 @@ export function MusicPlayer({ shouldPlay = false, onPlayingChange }: MusicPlayer
   const progress = duration ? (currentTime / duration) * 100 : 0
 
   return (
-    <div className="relative py-6 px-4 flex flex-col items-center w-full">
+    <div className="relative py-2 px-4 flex flex-col items-center w-full">
       <p
-        className="text-2xl md:text-3xl text-baby-gold mb-8 text-center"
+        className="text-2xl md:text-3xl text-baby-gold mb-4 text-center"
         style={{ fontFamily: "var(--font-script), 'Great Vibes', cursive" }}
       >
         Dale play para escuchar nuestra canción.

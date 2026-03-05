@@ -10,6 +10,7 @@ import { PhotoDivider } from "@/components/baby-shower/photo-divider"
 import { Countdown } from "@/components/baby-shower/countdown"
 import { EventDetails } from "@/components/baby-shower/event-details"
 import { Itinerary } from "@/components/baby-shower/itinerary"
+import { LluviaSobres } from "@/components/baby-shower/lluvia-sobres"
 import { Footer } from "@/components/baby-shower/footer"
 import { MusicPlayer } from "@/components/baby-shower/music-player"
 import { FloatingStars, FloatingClouds } from "@/components/baby-shower/floating-elements"
@@ -69,11 +70,7 @@ export default function BabyShowerPage() {
 
           <Countdown targetDate={EVENT_DATE} />
 
-          <WhatsAppRsvp
-            phoneNumber={WHATSAPP_PHONE}
-            babyName={BABY_NAME}
-            eventDate={EVENT_DATE_TEXT}
-          />
+
 
           <EventDetails
             day={EVENT_DAY}
@@ -81,12 +78,19 @@ export default function BabyShowerPage() {
             time={EVENT_TIME}
             address={EVENT_ADDRESS}
             mapUrl={MAP_URL}
-            giftRegistryUrl={GIFT_REGISTRY_URL}
           />
 
           <PhotoGallery />
 
           <Itinerary />
+
+          <LluviaSobres giftRegistryUrl={GIFT_REGISTRY_URL} />
+
+          <WhatsAppRsvp
+            phoneNumber={WHATSAPP_PHONE}
+            babyName={BABY_NAME}
+            eventDate={EVENT_DATE_TEXT}
+          />
 
           <PhotoDivider src="/images/baby-toys.jpg" alt="Juguetes del bebe" />
 

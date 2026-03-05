@@ -1,7 +1,7 @@
 "use client"
 
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
-import { Calendar, Clock, MapPin, Gift } from "lucide-react"
+import { Calendar, Clock, MapPin } from "lucide-react"
 import LocationMap from "@/components/map/location-map"
 
 interface EventDetailsProps {
@@ -10,7 +10,6 @@ interface EventDetailsProps {
   time: string
   address: string
   mapUrl: string
-  giftRegistryUrl: string
 }
 
 export function EventDetails({
@@ -19,7 +18,6 @@ export function EventDetails({
   time,
   address,
   mapUrl,
-  giftRegistryUrl,
 }: EventDetailsProps) {
   const { ref, isVisible } = useScrollAnimation()
 
@@ -96,48 +94,6 @@ export function EventDetails({
             <span>Ver ubicación</span>
           </a>
 
-          {/* Elegant divider */}
-          <div className="w-full flex flex-col items-center gap-1 my-8">
-            <div className="flex items-center gap-3 w-3/4">
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-baby-gold/50 to-baby-gold/50" />
-              <span className="text-baby-gold/60 text-lg">&#10045;</span>
-              <div className="flex-1 h-px bg-gradient-to-l from-transparent via-baby-gold/50 to-baby-gold/50" />
-            </div>
-          </div>
-
-          {/* Lluvia de Sobres */}
-          <div className="w-full py-2">
-            <h3
-              className="text-4xl md:text-4xl text-foreground mb-3"
-              style={{ fontFamily: "var(--font-script), 'Great Vibes', cursive" }}
-            >
-              Lluvia de Sobres
-            </h3>
-            <p className="text-muted-foreground text-xs font-sans mb-3">
-              + Pañales etapa 3 o 4
-            </p>
-            <div className="flex items-center gap-2 mb-3">
-              <div className="flex-1 h-px bg-baby-gold/40" />
-              <span className="text-baby-gold/70 text-xl font-bold leading-none">ó</span>
-              <div className="flex-1 h-px bg-baby-gold/40" />
-            </div>
-            <p
-              className="text-4xl md:text-5xl text-foreground"
-              style={{ fontFamily: "var(--font-script), 'Great Vibes', cursive" }}
-            >
-              Escoge tu regalo aquí
-            </p>
-          </div>
-
-          <a
-            href={giftRegistryUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-baby-pink/20 text-foreground text-sm tracking-wider font-sans hover:bg-baby-pink/30 transition-all duration-300 hover:scale-105 border border-baby-pink/30"
-          >
-            <Gift className="w-4 h-4" strokeWidth={1.5} />
-            <span>Ver mesa de regalos</span>
-          </a>
         </div>
       </div>
     </section>

@@ -63,7 +63,7 @@ export function HeroSection({ isPlaying = false, musicPlayer }: { isPlaying?: bo
         >
           Baby Shower
         </h1>
-        <div className="flex items-center justify-center gap-4 my-6">
+        <div className="flex items-center justify-center gap-4 my-3">
           <div className="h-px w-16 bg-baby-gold/40" />
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path d="M8 0L9.8 6.2L16 8L9.8 9.8L8 16L6.2 9.8L0 8L6.2 6.2L8 0Z" fill="#C9956B" opacity="0.6" />
@@ -85,13 +85,18 @@ export function HeroSection({ isPlaying = false, musicPlayer }: { isPlaying?: bo
 
       {/* Scroll indicator */}
       <div
-        className={`mt-4 flex flex-col items-center gap-2 transition-all duration-1000 delay-1000 ${
+        className={`mt-2 flex flex-col items-center gap-2 transition-all duration-1000 delay-1000 ${
           isVisible ? "opacity-60" : "opacity-0"
         }`}
       >
-        <span className="text-muted-foreground text-sm tracking-[0.2em] uppercase font-sans">Desliza</span>
-        <div className="w-5 h-8 rounded-full border border-baby-gold/40 flex items-start justify-center p-1.5">
-          <div className="w-1 h-2 rounded-full bg-baby-gold/60 animate-bounce" />
+        <div className="flex items-center gap-3">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="animate-bounce">
+            <path d="M6 0L6 12M6 0L1 5M6 0L11 5" stroke="currentColor" strokeWidth="1.5" className="text-foreground" />
+          </svg>
+          <span className="text-foreground text-sm tracking-[0.2em] uppercase font-sans">Desliza</span>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="animate-bounce">
+            <path d="M6 12L6 0M6 12L1 7M6 12L11 7" stroke="currentColor" strokeWidth="1.5" className="text-foreground" />
+          </svg>
         </div>
       </div>
     </section>
