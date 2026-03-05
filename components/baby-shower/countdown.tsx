@@ -47,12 +47,13 @@ export function Countdown({ targetDate }: CountdownProps) {
   ]
 
   return (
+   
     <section ref={ref} className="py-20 px-4">
       <div
         className={`max-w-lg mx-auto text-center transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
-      >
+      > {/*ssss*/}
         <p className="text-baby-gold text-xs tracking-[0.3em] uppercase mb-3 font-sans">Faltan</p>
         <div className="flex items-center justify-center gap-3 md:gap-6">
           {units.map((unit, i) => (
