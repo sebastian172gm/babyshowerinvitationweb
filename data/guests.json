@@ -290,13 +290,18 @@
     "category": "Familia Ibeth"
   },
   {
+    "name": "Camilo Ramirez & Señora",
+    "maxGuests": 2,
+    "category": "Familia Ibeth"
+  },
+  {
     "name": "Luis Gonzalez, Señora  Hijo",
     "maxGuests": 3,
     "category": "Familia Ibeth"
   },
   {
     "name": "Juan David Morales, Señora e hijo",
-    "maxGuests": 2,
+    "maxGuests": 3,
     "category": "Familia Ibeth"
   },
   {
