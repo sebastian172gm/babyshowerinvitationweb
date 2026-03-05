@@ -63,7 +63,7 @@ export function HeroSection({ isPlaying = false, musicPlayer }: { isPlaying?: bo
         >
           Baby Shower
         </h1>
-        <div className="flex items-center justify-center gap-4 my-3">
+        <div className="flex items-center justify-center gap-4 my-1">
           <div className="h-px w-16 bg-baby-gold/40" />
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path d="M8 0L9.8 6.2L16 8L9.8 9.8L8 16L6.2 9.8L0 8L6.2 6.2L8 0Z" fill="#C9956B" opacity="0.6" />
@@ -85,7 +85,7 @@ export function HeroSection({ isPlaying = false, musicPlayer }: { isPlaying?: bo
 
       {/* Scroll indicator */}
       <div
-        className={`mt-2 flex flex-col items-center gap-2 transition-all duration-1000 delay-1000 ${
+        className={`mt-0 flex flex-col items-center gap-2 transition-all duration-1000 delay-1000 ${
           isVisible ? "opacity-60" : "opacity-0"
         }`}
       >
