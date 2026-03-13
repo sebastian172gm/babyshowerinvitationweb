@@ -51,6 +51,13 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 npm run build
 ```
 
+### Update guests
+
+```bash
+npm run generate-guests ## to update lista de invitados.xlsx
+```
+
+
 ## Customization
 
 Edit the variables at the top of `app/page.tsx` to personalize:
@@ -61,6 +68,8 @@ Edit the variables at the top of `app/page.tsx` to personalize:
 - `MAP_URL` - Google Maps link
 - `GIFT_REGISTRY_URL` - Gift registry link
 - `WHATSAPP_PHONE` - WhatsApp number for RSVP
+
+
 
 ## Tech Stack
 
@@ -106,4 +115,3 @@ Edit the variables at the top of `app/page.tsx` to personalize:
             </div>
           </div>
 
-          npm run generate-guests ## to update lista de invitados.xlsx
